@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    height: 30vh;
+    width: 75vw;
+    border: 1px solid black;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.outer-input-box {
+    height: 15vh;
+    width: 75vw;
+    border-top: 1px solid black;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: aquamarine;
+}
+
+.result-box {
+    position: absolute;
+    width: 65vw;
+    height: 9vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    text-align: right;
+    overflow: auto;
+    font-size: 40px;
+    bottom: 0;
+    right: 0;
+}
+
+.expression-box {
+    position: absolute;
+    text-align: right;
+    height: 3vh;
+    width: 65vw;
+    right: 0;
+    color: grey;
+}
+
+main {
+    display: grid;
+    position: absolute;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(6, 16.67%);
+    border: 1px solid black;
+    height: 70vh;
+    width: 75vw;
+    bottom: 0;
+    left: 0;
+    background-color: darkblue;
+}
+
+main > section {
+    border-radius: 5px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+section.operation, section.item-openb, section.item-closeb, section.item-period {
+    font-size: 30px;
+}
+
+img {
+    max-width: 40%;
+    max-height: 40%;
+    object-fit: cover;
+}
+
+.equalto {
+    background-color:orange;
+}
+
+.operation, .special, .clear {
+    background-color: gray;
+}
+
+.digit, .sign {
+    background-color: lightgray;
+}
+
+.operation:active, .sign:active, .special:active, .digit:active, .clear:active {
+    background-color: darkgray;
+}
+
+.equalto:active {
+    background-color: orangered;
+}
+
+@media screen and (max-width: 480px) {
+
+    .outer-input-box {
+        height: 20vh;
+    }
+
+    .result-box {
+        width: 95vw;
+        height: 12vh;
+        font-size: 40px;
+        margin-left: 2.5vw;
+        margin-right: 2.5vw;
+    }
+
+    .expression-box {
+        width: 100vw;
+        height: 4vh;
+    }
+
+    main > section {
+        font-size: 30px;
+    }
+    
+    section.operation, section.item-openb, section.item-closeb, section.item-period {
+        font-size: 40px;
+    }
+
+    aside {
+        display: none;
+    }
+
+    main, header, .outer-input-box {
+        width: 100vw;
+    }
+}
