@@ -1,0 +1,15 @@
+table {
+    border: 1px solid black;
+    border-radius: 1%;
+}
+
+td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+}
+
+tr#highlight > td {
+    font-size: large;
+    font-weight: bolder;
+}
