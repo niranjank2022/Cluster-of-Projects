@@ -71,10 +71,10 @@
                 break;
             
             case "special":
-                specialEntered = true;
-                if (equaltoEntered)
+                if (equaltoEntered || specialEntered)
                     expression.textContent = "";
-
+                
+                    specialEntered = true;
                 if (!result.textContent)
                     break;
 
@@ -188,13 +188,11 @@
         if (node.scrollWidth > node.clientWidth)
             while (node.scrollWidth > node.clientWidth) {
                 newSize = parseFloat(node.style.fontSize) - 1;
-                console.log(node.scrollWidth, node.clientWidth, newSize + 1);
                 node.style.fontSize = newSize + 'px';
                 
             }
         else
             node.style.fontSize = '40px';
-        console.log(node.scrollWidth, node.clientWidth, newSize + 1);
     }
 
     }

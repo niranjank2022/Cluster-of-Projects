@@ -3,44 +3,41 @@
 }
 
 header {
-    height: 30vh;
-    width: 75vw;
+    height: 30vh; width: 75vw;
+    top: 0; left: 0;
     border: 1px solid black;
     position: absolute;
-    top: 0;
-    left: 0;
+}
+
+h1 {
+    text-align: left;
+    margin: 10px;
+    color: blue;
 }
 
 .outer-input-box {
-    height: 15vh;
-    width: 75vw;
+    height: 15vh; width: 75vw;
+    bottom: 0; right: 0;
     border-top: 1px solid black;
     position: absolute;
-    bottom: 0;
-    right: 0;
     background-color: aquamarine;
 }
 
 .result-box {
     position: absolute;
-    width: 65vw;
-    height: 9vh;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
+    height: 9vh; width: 65vw;
+    bottom: 0; right: 0;
+    margin-top: 1vh; margin-bottom: 1vh;
+    padding-top: 1vh; padding-bottom: 1vh;
     text-align: right;
     overflow: auto;
     font-size: 40px;
-    bottom: 0;
-    right: 0;
 }
 
 .expression-box {
     position: absolute;
     text-align: right;
-    height: 3vh;
-    width: 65vw;
+    height: 3vh; width: 65vw;
     right: 0;
     color: grey;
 }
@@ -51,10 +48,8 @@ main {
     grid-template-columns: repeat(4, 25%);
     grid-template-rows: repeat(6, 16.67%);
     border: 1px solid black;
-    height: 70vh;
-    width: 75vw;
-    bottom: 0;
-    left: 0;
+    height: 70vh; width: 75vw;
+    bottom: 0; left: 0;
     background-color: darkblue;
 }
 
@@ -104,16 +99,14 @@ img {
     }
 
     .result-box {
-        width: 95vw;
-        height: 12vh;
+        height: 12vh; width: 95vw;
         font-size: 40px;
-        margin-left: 2.5vw;
-        margin-right: 2.5vw;
+        margin-left: 2.5vw; margin-right: 2.5vw;
+        bottom: 0;
     }
 
     .expression-box {
-        width: 100vw;
-        height: 4vh;
+        height: 4vh; width: 100vw;
     }
 
     main > section {
@@ -130,5 +123,16 @@ img {
 
     main, header, .outer-input-box {
         width: 100vw;
+    }
+
+    header {
+        height: 40vh;
+    }
+    main {
+        height: 60vh;
+    }
+
+    main > section {
+        border-radius: 3px;
     }
 }
