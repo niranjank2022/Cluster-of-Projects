@@ -122,7 +122,6 @@
                         num2 = parseFloat(result.textContent) / 100;
                     result.textContent = num2;
                     expression.textContent += num2 + ' ';
-                    specialEntered = false;
                 }            
                 break;
 
