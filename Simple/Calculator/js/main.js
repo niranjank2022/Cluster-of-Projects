@@ -3,10 +3,16 @@
     global.result = document.querySelector(".result-box");
     global.equaltoEntered = global.operationEntered = global.specialEntered = false;
     global.num1 = global.num2 = global.lastOperation = null;
+    global._history = document.querySelector(".history");
     const keys = document.querySelectorAll('.button');
     keys.forEach(key => {
         key.addEventListener('click', handleClick)
     });
+
+    document.getElementById('garbage-icon').addEventListener('click',
+        function () {
+            _history.innerHTML = "";
+        })
 
     function handleClick(event) {
 
@@ -144,6 +150,19 @@
                     }
                 }
                 equaltoEntered = true;
+
+                var express = expression.textContent.split(' ');
+                var node = document.createElement('div');
+                var p1 = document.createElement('p');
+                p1.id = 'lhs'
+                p1.textContent = express.slice(0, 4).join(' ');
+                var p2 = document.createElement('p');
+                p2.id = 'rhs'
+                p2.textContent = express[4];
+                node.appendChild(p1);
+                node.appendChild(p2);
+                console.log(node);
+                _history.insertBefore(node, _history.firstChild);
                 break;
 
             case "clear":
