@@ -152,7 +152,10 @@
                 equaltoEntered = true;
 
                 var express = expression.textContent.split(' ');
+                if (express.length === 1)
+                    break;
                 var node = document.createElement('div');
+                node.id = 'hist';
                 var p1 = document.createElement('p');
                 p1.id = 'lhs'
                 p1.textContent = express.slice(0, 4).join(' ');
@@ -161,7 +164,6 @@
                 p2.textContent = express[4];
                 node.appendChild(p1);
                 node.appendChild(p2);
-                console.log(node);
                 _history.insertBefore(node, _history.firstChild);
                 break;
 

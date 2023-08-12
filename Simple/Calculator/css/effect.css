@@ -1,0 +1,72 @@
+/* scroll-bar */
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+section::-webkit-scrollbar {
+    display: block;
+    width: 5px;
+}
+
+section::-webkit-scrollbar-track {
+    background-color: darkgray;
+}
+
+section::-webkit-scrollbar-thumb {
+    background-color: gray;
+}
+
+section::-webkit-scrollbar-button {
+    display: none;
+}
+
+/* Mobile view */
+@media screen and (max-width: 480px) {
+ 
+    .operation:active, .sign:active, .special:active, .digit:active, .clear:active, #garbage-icon:active {
+        background-color: darkgrey;
+    }
+
+    .equalto:active {
+        background-color: orangered;
+    }
+
+    #hist:active {
+        background-color: palevioletred;
+    }
+
+    aside.sidebar {
+        display: none;
+    }
+
+    figure {
+        height: 40px;
+        width: 40px;
+    }
+
+    img#history {
+        position: absolute;
+        object-fit: fill;
+    }
+}
+
+/* Desktop view */
+@media screen and (min-width: 480px) {
+    
+    .operation:hover, .sign:hover, .special:hover, .digit:hover, .clear:hover, #garbage-icon:hover {
+        background-color: darkgrey;
+    }
+
+    .equalto:hover {
+        background-color: orangered;
+    }
+
+    #hist:hover {
+        background-color: palevioletred;
+    }
+
+    img#history {
+        display: none;
+    }
+}

@@ -18,7 +18,7 @@ h1 {
 
 .outer-input-box {
     height: 15vh; width: 75vw;
-    bottom: 0; right: 0;
+    bottom: 0;
     border-top: 1px solid black;
     position: absolute;
     background-color: aquamarine;
@@ -79,7 +79,6 @@ aside > img {
     position: absolute;
     height: 5%; width: 7%;
     bottom: 10px; right: 10px;
-
 }
 
 main {
@@ -124,34 +123,6 @@ main > section > img {
     background-color: lightgray;
 }
 
-.operation:active, .sign:active, .special:active, .digit:active, .clear:active, .operation:hover, .sign:hover, .special:hover, .digit:hover, .clear:hover, #garbage-icon:hover {
-    background-color: darkgray;
-}
-
-.equalto:active, .equalto:hover {
-    background-color: orangered;
-}
-
-div::-webkit-scrollbar {
-    display: none;
-}
-
-section::-webkit-scrollbar {
-    width: 5px;    
-}
-
-section::-webkit-scrollbar-track {
-    background-color: darkgray;
-}
-
-section::-webkit-scrollbar-thumb {
-    background-color: gray;
-}
-
-section::-webkit-scrollbar-button {
-    display: none;
-}
-
 @media screen and (max-width: 480px) {
 
     .outer-input-box {
@@ -175,10 +146,6 @@ section::-webkit-scrollbar-button {
     
     section.operation, section.item-openb, section.item-closeb, section.item-period {
         font-size: 40px;
-    }
-
-    aside {
-        display: none;
     }
 
     main, header, .outer-input-box {
