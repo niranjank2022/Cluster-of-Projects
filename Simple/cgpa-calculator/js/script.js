@@ -1,39 +1,76 @@
 (function (global) {
 
-    console.log("Hello Mars!");
-    const form = document.getElementById("myForm");
-    const submit = document.getElementById("submit-button");
-    submit.addEventListener('click', function (event) {
+global.boxCount = 0;
+const parser = new DOMParser();
+var buttonHtml = 
+`
+<section class="box box-0">
+    <p class="box-content">Subject 0</p>
+    <select name="subject" class="box-content" required>
+        <option value="">Grade</option>
+        <option value="10">O</option>
+        <option value="9">A+</option>
+        <option value="8">A</option>
+        <option value="7">B+</option>
+        <option value="6">B</option>
+    </select>
+    <select name="credit" class="box-content" required>
+        <option value="">Credit</option>
+        <option value="6">6</option>
+        <option value="5">5</option>
+        <option value="4">4</option>
+        <option value="3">3</option>
+        <option value="2">2</option>
+        <option value="1">1</option>
+    </select>
+    <button class="remove-button">&#x2715</button>
+</section>
+`;
 
-        const arr = [ 'enggmath', 'engggraph', 'dsd', 'hss', 'ite',
-                'pspp', 'itel', 'psppl', 'dsl' ];
-        const credits = [2, 3, 4, 3, 2, 3, 4, 3, 2];
-        var sum = 0;
-        
-        for (let i = 0, mark; i < 9; i++ ) {
-            mark = form.elements[arr[i]].value;
-            sum += findGPA(mark) * credits[i];
-        }
-        var grade = (sum / (credits.reduce((x, y) => { return x + y; }) * 10)) * 10;
-        document.write("Your grade is, ", grade.toPrecision(3));
-    })
+var add = function (event) {
+    global.boxCount++;
+    var str = buttonHtml.replace(/box-[0-9]/m, "box-" + global.boxCount).replace(/Subject [0-9]/m, "Subject " + global.boxCount);
+    var node = parser.parseFromString(str, 'text/html').querySelector('section');
+    $("#container").append(node);
+}
 
-    findGPA = function (x) {
-        if (x <= 100 && x >= 90)
-            return 10;
-        if (x < 90 && x >= 80)
-            return 9;
-        if (x < 80 && x >= 70)
-            return 8;
-        if (x < 70 && x >= 60)
-            return 7;
-        if (x < 60 && x >= 50)
-            return 6;
-        if (x < 50 && x >= 40)
-            return 5;
-        return 4;
-    }   
+var remove = function (event) {
+    global.boxCount--;
+    const num = (event.target.parentNode.className).match(/[0-9]/g)[0];
+    event.target.parentNode.remove();
 
-} (window))
+    for (let i = parseInt(num) + 1; i <= global.boxCount + 1; i++) {
+        let node = document.querySelector(".box-" + i);
+        node.childNodes[1].innerHTML = "Subject " + (i - 1);
+        node.classList.add("box-" + (i - 1));
+        node.classList.remove("box-" + i);
+    }
+}
 
+var calculate = function (event) {
+    let creditCount = 0, totalCGrade = 0;
+    for (let i = 1; i <= global.boxCount; i++) {
+        var node = document.querySelector(".box-" + i);
+        totalCGrade += parseInt(node.childNodes[3].value) * parseInt(node.childNodes[5].value);
+        creditCount += parseInt(node.childNodes[5].value);
+    }
+    if (totalCGrade)
+        global.document.write("<b>Your Grade is " + totalCGrade / creditCount + "</b>");
+    else
+        global.alert("Some values are left out. Kindly fill them and try again.");
+    
+}
 
+add();
+$("body").click(
+    function (event) {
+        let clickedClass = event.target.className;
+        if (clickedClass == 'add-button')
+            add();
+        else if (clickedClass == 'remove-button')
+            remove(event);
+        else if (clickedClass == 'calculate-button')
+            calculate(event);
+    }
+)
+} (window));
