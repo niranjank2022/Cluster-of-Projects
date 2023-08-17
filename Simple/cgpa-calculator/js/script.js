@@ -1,7 +1,10 @@
+// Function executes on loading the page
 (function (global) {
 
 global.boxCount = 0;
 const parser = new DOMParser();
+
+// Template html for the each subject-box
 var buttonHtml = 
 `
 <section class="box box-0">
@@ -27,6 +30,7 @@ var buttonHtml =
 </section>
 `;
 
+// Function to add new subject-box
 var add = function (event) {
     global.boxCount++;
     var str = buttonHtml.replace(/box-[0-9]/m, "box-" + global.boxCount).replace(/Subject [0-9]/m, "Subject " + global.boxCount);
@@ -34,6 +38,7 @@ var add = function (event) {
     $("#container").append(node);
 }
 
+// Function to remove existing subject-box
 var remove = function (event) {
     global.boxCount--;
     const num = (event.target.parentNode.className).match(/[0-9]/g)[0];
@@ -47,6 +52,7 @@ var remove = function (event) {
     }
 }
 
+// Function to calculate the GPA score
 var calculate = function (event) {
     let creditCount = 0, totalCGrade = 0;
     for (let i = 1; i <= global.boxCount; i++) {
@@ -61,7 +67,10 @@ var calculate = function (event) {
     
 }
 
+// Adding a subject box on loading the web page
 add();
+
+// Adding Event Listener when click add-button, remove-button, calculate
 $("body").click(
     function (event) {
         let clickedClass = event.target.className;
@@ -71,6 +80,6 @@ $("body").click(
             remove(event);
         else if (clickedClass == 'calculate-button')
             calculate(event);
-    }
-)
+    })
+
 } (window));
