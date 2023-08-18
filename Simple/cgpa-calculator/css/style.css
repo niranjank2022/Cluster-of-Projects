@@ -66,4 +66,10 @@ body {
     align-items: center;
     margin-top: 22px;
     cursor: pointer;
+    color:black;
+    background-color: white;
+}
+
+.box select{
+    background-color: #86c79b;
 }
