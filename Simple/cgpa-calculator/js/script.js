@@ -61,7 +61,7 @@ var calculate = function (event) {
         creditCount += parseInt(node.childNodes[5].value);
     }
     if (totalCGrade)
-        global.document.write("<b>Your Grade is " + totalCGrade / creditCount + "</b>");
+        global.document.write("<b>Your Grade is " + (totalCGrade / creditCount).toFixed(2) + "</b>");
     else
         global.alert("Some values are left out. Kindly fill them and try again.");
     
