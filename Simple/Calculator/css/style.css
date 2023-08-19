@@ -3,6 +3,11 @@
     margin: 0;
 }
 
+body{
+    background-color: #0C356A;
+}
+
+
 header {
     height: 30vh; width: 75vw;
     top: 0; left: 0;
@@ -13,7 +18,14 @@ header {
 h1 {
     text-align: left;
     margin: 10px;
-    color: blue;
+    color: #D5FFD0;
+    font-family: 'Chakra Petch', sans-serif;
+    margin-top: 20px;
+}
+
+h2{
+    color: #2155CD;
+    font-family: 'Chakra Petch', sans-serif;
 }
 
 .outer-input-box {
@@ -21,7 +33,7 @@ h1 {
     bottom: 0;
     border-top: 1px solid black;
     position: absolute;
-    background-color: aquamarine;
+    background-color: #4cabf9;
 }
 
 .result-box {
@@ -33,6 +45,8 @@ h1 {
     text-align: right;
     overflow: auto;
     font-size: 40px;
+    padding-right: 10px;
+    color: #0C356A;
 }
 
 .expression-box {
@@ -40,15 +54,20 @@ h1 {
     text-align: right;
     height: 3vh; width: 65vw;
     right: 0;
-    color: grey;
+    color: #6E3CBC;
+    font-size: 20px;
+    font-weight: bold;
+    padding-right: 10px;
 }
 
 aside {
     position: absolute;
-    height: 100vh; width: 25vw;
+    height: 85vh; width: 25vw;
     top: 0; right: 0;
-    background-color: lightcoral;
+    background-color: #40F8FF;
+    margin-top: 15vh;
 }
+
 
 aside > section {
     display: flex;
@@ -66,13 +85,15 @@ aside > section > div {
 }
 
 p#lhs {
-    font-size: 15px;
-    color: silver;
+    font-size: 20px;
+    color: #533E85;
+    font-weight: bold;
 }
 
 p#rhs {
-    font-size: 20px;
-    color: white;
+    font-size: 25px;
+    color: #2D31FA;
+    font-weight: bold;
 }
 
 aside > img {
