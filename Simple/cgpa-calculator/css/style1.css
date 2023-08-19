@@ -17,7 +17,11 @@
 .heading {
   font-size: 4rem;
   text-align: center;
-  display: block;
+  /* display: inline; */
+}
+
+.themes {
+  margin-left: 1rem;
 }
 
 .box {

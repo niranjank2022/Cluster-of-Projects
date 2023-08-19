@@ -67,6 +67,24 @@ var calculate = function (event) {
     
 }
 
+// Function to change the theme
+var shiftTheme = function (event) {
+    let selectedTheme = event.target.value;
+    let node = $("link")[1];
+
+    switch (selectedTheme) {
+        case "th-1":
+            node.href = "css/style1.css";
+            break;
+        case "th-2":
+            node.href = "css/style2.css";
+            break;
+        case "th-3":
+            node.href = "css/style3.css";
+            break;
+    }
+}
+
 // Adding a subject box on loading the web page
 add();
 
@@ -80,6 +98,8 @@ $("body").click(
             remove(event);
         else if (clickedClass == 'calculate-button')
             calculate(event);
+        else if (clickedClass == 'themes')
+            shiftTheme(event);
     })
 
 } (window));
