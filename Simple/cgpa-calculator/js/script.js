@@ -76,12 +76,12 @@ var shiftTheme = function (event) {
         case "th-1":
             node.href = "css/style1.css";
             break;
-        case "th-2":
-            node.href = "css/style2.css";
-            break;
-        case "th-3":
-            node.href = "css/style3.css";
-            break;
+        // case "th-2":
+        //     node.href = "css/style2.css";
+        //     break;
+        // case "th-3":
+        //     node.href = "css/style3.css";
+        //     break;
     }
 }
 
