@@ -6,12 +6,15 @@
     <title>My Basic Calculator</title>
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/effect.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Standard</h1>
+        <h1  id="heading" style="text-align: center;">Standard Calculator</h1>
 
-        <figure id="history"><img src="img/history.png" alt="History"></figure>
+        <!-- <figure id="history"><img src="img/history.png" alt="History"></figure> -->
         
         <div class="outer-input-box">
             <div class="expression-box"></div>
@@ -20,7 +23,7 @@
     </header>
 
     <aside class="sidebar">
-        <h2>History</h2>
+        <h2 style="text-align: center;" ><u>History</u></h2>
         <section class="history"></section>
         <img src="img/waste.png" alt="Clear History" id="garbage-icon">
     </aside>
