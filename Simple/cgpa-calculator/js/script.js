@@ -16,6 +16,7 @@ var buttonHtml =
         <option value="8">A</option>
         <option value="7">B+</option>
         <option value="6">B</option>
+        <option value="5">C</option>
     </select>
     <select name="credit" class="box-content" required>
         <option value="">Credit</option>
@@ -61,7 +62,7 @@ var calculate = function (event) {
         creditCount += parseInt(node.childNodes[5].value);
     }
     if (totalCGrade)
-        global.document.write("<b>Your Grade is " + (totalCGrade / creditCount).toFixed(2) + "</b>");
+        global.document.write("<h1>Congratulations!</h1><b>Your Grade is " + (totalCGrade / creditCount).toFixed(2) + "</b>");
     else
         global.alert("Some values are left out. Kindly fill them and try again.");
     
