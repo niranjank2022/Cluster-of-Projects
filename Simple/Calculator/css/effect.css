@@ -41,13 +41,9 @@ section::-webkit-scrollbar-button {
     }
 
     figure {
-        height: 40px;
-        width: 40px;
-    }
-
-    img#history {
-        position: absolute;
-        object-fit: fill;
+        /* height: 40px;
+        width: 40px; */
+        display: none;
     }
 }
 
@@ -66,7 +62,7 @@ section::-webkit-scrollbar-button {
         background-color: palevioletred;
     }
 
-    img#history {
+    figure#history {
         display: none;
     }
 }

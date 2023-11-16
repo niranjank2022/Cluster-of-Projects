@@ -64,3 +64,7 @@
     document.getElementById("generate").addEventListener("click", generateCalender);
 
 } (window))
+
+let fn = function (...args) {
+    args.forEach
+}
